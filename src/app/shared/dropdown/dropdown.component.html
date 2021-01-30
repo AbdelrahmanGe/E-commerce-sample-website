@@ -1,0 +1,4 @@
+<div class="dropdown dropdown--left"  [ngClass]='{"dropdown--opened":flag}' (click)="flag=!flag" >
+<ng-content select='.header' ></ng-content>
+<ng-content select='.body' ></ng-content>
+</div>

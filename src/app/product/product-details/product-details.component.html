@@ -1,0 +1,96 @@
+<div class="product-details container">
+    <section class="product-details__main">
+        <!-- images slider -->
+        <div class="slider">
+            <div class="slider__items">
+                <div class="slider__item active" [style]="{'background-image':'url('+producT.imagesUrls[0]+')'}"  ></div>
+                <div class="slider__item" [style]="{'background-image':'url('+producT.imagesUrls[0]+')'}"></div>
+                <div class="slider__item" [style]="{'background-image':'url('+producT.imagesUrls[0]+')'}"></div>
+            </div>
+            <div class="slider__indicators">
+                <span class="slider__indicator active"></span>
+                <span class="slider__indicator"></span>
+                <span class="slider__indicator"></span>
+            </div>
+        </div>
+        <!-- product info -->
+        <div class="product-details__info">
+            <h1>{{producT.data[0].name}}</h1>
+            <div class="rating">
+                <div class="rating__stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="rating__data">
+                    2 reviews
+                </div>
+            </div>
+            <div class="product-details__amount">
+                {{producT.price-producT.discount|currency:'USD'}}
+            </div>
+            <p class="product-details__desc">
+                {{producT.data[0].description}}
+            </p>
+            <div class="product-details__add">
+                <div class="increment-control">
+                    <a href="#" class="increment-control__action">-</a>
+                    <input type="text" class="form-control" title="Qty" value="1">
+                    <a href="#" class="increment-control__action">+</a>
+                </div>
+                <button (click)="ADDING()"  class="btn btn--primary">Add to cart</button>
+            </div>
+            <div class="product-details__meta">
+                Categories: <a rel="tag" href="#">Accessories</a>, <a rel="tag" href="#">Bags</a>.
+            </div>
+        </div>
+    </section>
+    <section class="tabs">
+        <div class="tabs__headers">
+            <div class="tabs__header active">
+                {{producT.data[0].description}}
+            </div>
+            <div class="tabs__header">
+                Additional Information
+            </div>
+            <div class="tabs__header">
+                Reviews (2)
+            </div>
+        </div>
+        <div class="tabs__bodies">
+            <div class="tabs__body active">
+                <div class="product-details__desc">
+                    <p>
+                     {{producT.data[0].description}}
+                    </p>
+            
+                </div>   
+            </div>
+            <div class="tabs__body ">
+                tab2
+            </div>
+            <div class="tabs__body">
+                tab3
+            </div>
+        </div>
+    </section>
+    <div class="separator"></div>
+    <!-- related products -->
+    <section class="realated-product">
+        <h3>Related <strong>Products</strong></h3><strong>
+        <div class="item-listing__items item-listing--4items">
+            <!-- medium item -->
+
+
+
+            <app-product-item class="item-medium-1" *ngFor='let x of suggestItem'  [product]=x  ></app-product-item>
+
+
+
+
+
+        </div>
+    </strong></section><strong>
+</strong></div>
